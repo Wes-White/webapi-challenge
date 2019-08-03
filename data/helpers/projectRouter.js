@@ -23,7 +23,7 @@ router.get('/', validateProjectId, async (req, res) => {
   } catch (error) {
     res.status(500).json({
       success: false,
-      message: 'We were unable to retrieve your project.'
+      message: 'We were unable to retrieve your Project.'
     });
   }
 });
@@ -50,12 +50,10 @@ router.put('/:id', validateProjectId, async (req, res) => {
     res.status(200).json(edit);
   } catch (error) {
     console.log(error);
-    res
-      .status(500)
-      .json({
-        success: false,
-        message: 'We were unable to update your project'
-      });
+    res.status(500).json({
+      success: false,
+      message: 'We were unable to update your project'
+    });
   }
 });
 

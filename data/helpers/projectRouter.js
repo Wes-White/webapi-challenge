@@ -50,7 +50,12 @@ router.put('/:id', validateProjectId, async (req, res) => {
     res.status(200).json(edit);
   } catch (error) {
     console.log(error);
-    res.status(500).json({ message: 'We were unable to delete your project' });
+    res
+      .status(500)
+      .json({
+        success: false,
+        message: 'We were unable to update your project'
+      });
   }
 });
 
